@@ -1,0 +1,341 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #000; /* Set background color to black */
+    color: #ffffff; /* Default text color to white for contrast */
+}
+
+.container {
+    max-width: 1200px; /* Optional: set max width for content */
+    margin: auto; /* Center the container */
+    padding: 20px; /* Add padding */
+}
+
+/* Other existing styles... */
+
+/* Parallax Home Section */
+.parallax {
+    background-color: #1b1b1b; /* Very dark gray background */
+    color: #fff;
+    padding: 100px 0;
+}
+
+.parallax h1 {
+    font-size:  4rem;
+    margin-bottom: 20px;
+}
+
+.parallax p {
+    font-size: 1.25rem;
+}
+
+.parallax .container-fluid {
+    position: relative;
+    z-index: 1;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.parallax .row {
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.parallax .text-frame {
+    padding: 100px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    border-radius: 10px;
+}
+
+.parallax .text-frame h1,
+.parallax .text-frame p {
+    margin: 0;
+}
+
+.parallax .image-frame {
+    position: relative;
+    z-index: 0;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+}
+
+.parallax .image-frame img {
+    width: 600px; /* Adjust width to auto for proper centering */
+    max-width: 100%; /* Ensure it doesn’t exceed the container */
+    height: auto; /* Maintain aspect ratio */
+    padding: 0;
+    border-radius: 10px;
+}
+/* About Section */
+.about-section {
+    background-color: #1b1b1b; /* Dark gray background */
+    padding: 80px 0; /* Padding around the section */
+    color: #ccc; /* Light text color */
+    display: flex;
+    justify-content: flex-start; /* Align items closer */
+    align-items: center;
+}
+
+/* Text Frame for About Section */
+.text-frame {
+    background: rgba(255, 255, 255, 0.05); /* Faded white background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Reduced padding */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    color: #fff; /* Light text color */
+    max-width: 55%; /* Reduced width */
+    margin-right: 2%; /* Reduced margin to bring text closer to image */
+}
+
+.profile-pic-wrapper {
+    width: 300px; /* Set the width for the rectangular frame */
+    height: 400px; /* Set the height for the rectangular frame */
+    overflow: hidden;
+    border-radius: 10px; /* Slightly rounded corners for a softer rectangle look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Optional: adds a shadow effect */
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the rectangular frame without distortion */
+}
+
+/* Info Items (like Location, Age, etc.) */
+.info-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 15px; /* Space between each info item */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    width: 45%; /* Adjust width so two items fit in a row */
+}
+
+.info-item i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.2rem;
+}
+
+.info-item span {
+    color: #fff; /* Text color for info items */
+}
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+
+    .text-frame {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .profile-pic-wrapper {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .info-item {
+        width: 100% /* Full width for each info item on mobile */
+    }
+}
+/* Portfolio Section Styling */
+#portfolio {
+    background-color: #000; /* Solid black background for the section */
+    padding: 5rem 0;
+    color: #000000; }
+
+/* Title Styling */
+#portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center; /* Center align the section title */
+    color: #ffffff; /* White text color */
+}
+/* Portfolio Section Styling */
+#portfolio {
+    background-color: #000; /* Solid black background for the section */
+    padding: 5rem 0;
+    color: #000000; /* Text color for the portfolio section */
+}
+
+/* Title Styling */
+#portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center; /* Center align the section title */
+    color: #ffffff; /* White text color */
+}
+
+/* Portfolio Item Styling */
+.portfolio-item {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Start off with a slight vertical translation */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth animation */
+    border: none; /* Remove border for a cleaner look */
+    background-color: rgba(0, 0, 0, 0.8); /* Faded black background for the box */
+    padding: 20px; /* Padding inside the box */
+    margin: 1rem; /* Space between boxes */
+}
+
+/* Active class when in view */
+.portfolio-item.active {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .portfolio-item {
+        transform: translateY(30px); /* Slightly less translation on mobile */
+    }
+}
+
+/* Project Card Styling */
+.card {
+    background-color: rgba(0, 0, 0, 0.8); /* Faded black background for the card */
+    border: none; /* Remove border for a cleaner look */
+    box-shadow: none; /* Remove shadow */
+    transition: transform 0.3s ease; /* Keep only the transform transition */
+    border-radius: 10px; /* Rounded corners for cards */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Hover effect to lift the card */
+    /* No shadow effect on hover */
+}
+
+.card-title, .card-text {
+    color: #ffffff; /* Text color inside the cards */
+}
+
+.card-img-top {
+    filter: brightness(0.8); /* Slightly darken the image */
+    transition: filter 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    filter: brightness(1); /* Restore brightness on hover */
+}
+
+/* Certifications Section */
+.certification-carousel {
+    display: flex; /* Use flexbox for horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 20px 0; /* Padding for top and bottom */
+}
+
+.certification-item {
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 250px; /* Set a fixed width for each certification */
+    margin-right: 20px; /* Space between items */
+    text-align: center; /* Center text below images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(44, 44, 44, 0.753); /* Faded black background */
+    padding: 10px; /* Padding for the item */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Faded white border for the frame */
+    box-shadow: 0 4px 8px rgba(192, 67, 67, 0.5); /* Subtle shadow for the frame */
+}
+
+.certification-item:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(136, 54, 54, 0.7); /* Deeper shadow on hover */
+}
+
+
+.certification-item img {
+    border-radius: 10px; /* Rounded corners for images */
+    max-width: 100%; /* Ensure image fits within the item */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.description {
+    margin-top: 10px; /* Space between image and description */
+    font-size: 14px; /* Font size for description */
+    color: #ffffff; /* White text color for better visibility */
+}
+/* Contact Section Styling */
+#contact {
+    background-color: #000; /* Solid black background for the section */
+    padding: 5rem 0;
+    color: #000000;
+}
+
+/* Title Styling */
+#contact h2 {
+    color: #000000; /* White text color */
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center; /* Center align the section title */
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 1.5rem; /* Space between form groups */
+}
+
+/* Input and Textarea Styling */
+.form-control {
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 1rem; /* Padding inside the input box */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    color: #000000; /* White text color */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2); /* Darker on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Green glow on focus */
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+.form-group {
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Light border around form group */
+    border-radius: 8px; /* Rounded corners for the border */
+    padding: 10px; /* Padding inside the border */
+    margin-bottom: 1rem; /* Space between fields */
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly faded background for form groups */
+}
+
+.btn-primary {
+    background-color: #000000; /* Bootstrap primary color */
+    border: none; /* Remove border */
+    transition: background-color 0.3s ease; /* Transition effect for button */
+}
+
+.btn-primary:hover {
+    background-color: #000000; /* Darker blue on hover */
+}
